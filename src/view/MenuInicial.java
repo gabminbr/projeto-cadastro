@@ -3,12 +3,14 @@ package view;
 import java.util.Scanner;
 
 public class MenuInicial {
-    private static int resposta;
+    private static int resposta = 0;
     private static Scanner in = new Scanner(System.in);
 
     public static int inputMenu(){
-        printMenu();
-        resposta = Integer.valueOf(in.nextInt());
+        while(resposta <= 0){
+            printMenu();
+            resposta = Integer.valueOf(in.nextInt());
+        }
         return resposta;
     }
 
